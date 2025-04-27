@@ -1,0 +1,113 @@
+@import url(variables.css);
+
+/* Responsive styling for the dogs page */
+
+h2 {
+    text-align: center;
+    margin: 25px 0;
+    color: var(--dark-text);
+}
+
+/* Header section with quotes about dogs */
+.hundar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 25px auto;
+    text-align: center;
+}
+
+#hundar1, #hundar2 {
+    width: 45%;
+    margin: 10px;
+    padding: 15px;
+    background-color: var(--green);
+    color: var(--white);
+    border-radius: var(--bord-rad);
+    font-size: 1.2rem;
+}
+
+/* Dog cards grid layout */
+.doges {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.box {
+    background-color: var(--white);
+    border-radius: var(--bord-rad);
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.box:hover {
+    transform: translateY(-5px);
+}
+
+.box img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 6px solid var(--green);
+    margin-bottom: 15px;
+}
+
+.box h3 {
+    margin: 10px 0;
+    color: var(--dark-text);
+}
+
+.box p {
+    line-height: 1.5;
+    color: var(--brown);
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .hundar {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #hundar1, #hundar2 {
+        width: 90%;
+        font-size: 1rem;
+    }
+    
+    .doges {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        padding: 10px;
+        gap: 15px;
+    }
+    
+    .box {
+        padding: 15px;
+    }
+    
+    .box img {
+        width: 150px;
+        height: 150px;
+        border-width: 4px;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+    .doges {
+        grid-template-columns: 1fr;
+    }
+    
+    .box img {
+        width: 180px;
+        height: 180px;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+}
